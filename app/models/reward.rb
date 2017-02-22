@@ -4,3 +4,4 @@ class Reward < ActiveRecord::Base
   has_many :backers, through: :pledges, source: :user
 
 end
+# description and dollar_amount should be required fields for rewards

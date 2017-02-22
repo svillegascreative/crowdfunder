@@ -4,13 +4,14 @@
 <p>Goal: <%= number_to_currency(@project.goal) %></p>
 <p>Fundraising starts: <%= @project.start_date.strftime("%A %b %d %Y") %></p>
 <p>Deadline: <%= @project.end_date.strftime("%A %b %d %Y") %></p>
-
+<p>Days Left Until Deadline: <%= @days %> </p>
+<!-- format -->
 <% if @project.image.present? %>
   <%= image_tag @project.image %>
 <% end %>
 
 <h2>Rewards</h2>
-<% @project.rewards.each do |reward| %> 
+<% @project.rewards.each do |reward| %>
   <p><%= number_to_currency(reward.dollar_amount) %></p>
   <p><%= reward.description %></p>
 

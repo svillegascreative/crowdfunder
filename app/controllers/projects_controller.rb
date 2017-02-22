@@ -8,6 +8,7 @@ class ProjectsController < ApplicationController
 
   def show
     @project = Project.find(params[:id])
+    @days = ((@project.end_date - @project.start_date) / 1.day).round
   end
 
   def new

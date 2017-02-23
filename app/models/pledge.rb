@@ -4,7 +4,7 @@ class Pledge < ApplicationRecord
   has_one :project, through: :reward
 
   validate :enough_pledged
-  validate :dollar_amount, presence: true
+  validates :dollar_amount, presence: true
 
   def enough_pledged
     unless self.dollar_amount >= reward.dollar_amount

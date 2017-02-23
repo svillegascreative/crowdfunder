@@ -16,8 +16,11 @@ class Project < ActiveRecord::Base
         errors.add(:start_date, "Your project cannot start before today")
      end
   end
-
-
+  # 
+  # def end_date_after_start_date
+  #   if end_date.present? && end_date <= start_date
+  #     erros.add()
+  #
 
 
 

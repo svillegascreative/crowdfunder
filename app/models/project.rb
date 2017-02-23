@@ -6,9 +6,7 @@ class Project < ActiveRecord::Base
   validates_presence_of :title, :description, :goal, :start_date, :end_date
   validate :start_date_in_future
   validate :end_date_after_start_date
-  validates :goal, numericality: {greater_than_or_equal_to: 0}
-
-# # Reward dollar_amount must be positive number
+  validates :goal, numericality: {greater_than: 0}
 
 
   def start_date_in_future

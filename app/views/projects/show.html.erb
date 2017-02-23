@@ -3,6 +3,7 @@
 <p>By: <%= @project.user.first_name %> <%= @project.user.last_name  %></p>
 <p><%= @project.description %></p>
 <p>Goal: <%= number_to_currency(@project.goal) %></p>
+<p>Raised so far: <%= number_to_currency(@project.pledges.sum(:dollar_amount)) %></p>
 <p>Fundraising starts: <%= @project.start_date.strftime("%A %b %d %Y") %></p>
 <p>Deadline: <%= @project.end_date.strftime("%A %b %d %Y") %></p>
 <p>Days Left Until Deadline: <%= @days %> </p>

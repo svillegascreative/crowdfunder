@@ -1,0 +1,8 @@
+<h1> user dashboard </h1>
+
+<ul> <% @rewards.zip(@pledges).each do |x, y|%>
+    <li> <%= x.dollar_amount  %> </li>
+    <li> <%= y.description %> </li>
+
+         <% end %>
+</ul>

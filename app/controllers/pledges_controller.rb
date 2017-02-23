@@ -1,6 +1,8 @@
 class PledgesController < ApplicationController
   before_action :require_login
 
+
+
   def create
     @pledge = Pledge.new(pledge_params)
     @pledge.user = current_user

@@ -25,7 +25,7 @@ class ProjectsController < ApplicationController
     else
       render :new
     end
-   end
+  end
 
   private
   def project_params

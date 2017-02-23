@@ -6,12 +6,11 @@ class Project < ActiveRecord::Base
   validates_presence_of :title, :description, :goal, :start_date, :end_date
   validate :start_date_in_future
   validate :end_date_after_start_date
+  validates :goal, numericality: {greater_than_or_equal_to: 0}
 
-# #Project end date must be later than start date
-# # A project's goal must be positive number
 # # Reward dollar_amount must be positive number
-#
-#
+
+
   def start_date_in_future
     if start_date.present? && start_date < Date.today
         errors.add(:start_date, "Your project cannot start before today")
@@ -24,13 +23,6 @@ class Project < ActiveRecord::Base
     end
   end
 
-
-
-
-#   def start_date_in_future
-#     if start_date_in_future
-#     errors.add(:date, "Can't be in the past!") if date < Date.today
-#   end
 
 
 end

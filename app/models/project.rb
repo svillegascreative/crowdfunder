@@ -5,6 +5,7 @@ class Project < ActiveRecord::Base
   accepts_nested_attributes_for :rewards
   validates_presence_of :title, :description, :goal, :start_date, :end_date
   validate :start_date_in_future
+  validate :end_date_after_start_date
 
 # #Project end date must be later than start date
 # # A project's goal must be positive number
@@ -16,11 +17,13 @@ class Project < ActiveRecord::Base
         errors.add(:start_date, "Your project cannot start before today")
      end
   end
-  # 
-  # def end_date_after_start_date
-  #   if end_date.present? && end_date <= start_date
-  #     erros.add()
-  #
+
+  def end_date_after_start_date
+    if end_date.present? && end_date <= start_date
+      errors.add(:end_date, "Your project cannot end before it starts! duhhhh")
+    end
+  end
+
 
 
 

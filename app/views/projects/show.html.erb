@@ -18,6 +18,7 @@
 <h2>Rewards</h2>
 <% @project.rewards.each do |reward| %>
   <p><%= reward.title %></p>
+  <p><%= reward.pledges.length %> claimed so far! </p>
   <p><%= number_to_currency(reward.dollar_amount) %></p>
   <p><%= reward.description %></p>
 

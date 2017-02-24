@@ -29,6 +29,8 @@ gem 'sorcery'
 # Dynamically create nested objects in forms
 gem "cocoon"
 
+gem "rails-erd"
+
 
 gem 'coffee-rails'
 # Scalable vector icon pack

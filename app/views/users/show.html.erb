@@ -1,7 +1,9 @@
 <h1> user dashboard </h1>
 
-<ul> <% @pledges.each do |x|%>
-    <li> <%= x.dollar_amount  %> </li>
+<ul> <% @rewards.each do |x|%>
+    <li> Project Backed: "<%= x.description  %>" and Amount Pledged: "$ <%= x.dollar_amount  %> "</li>
+
 
          <% end %>
+
 </ul>

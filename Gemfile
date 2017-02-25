@@ -29,7 +29,11 @@ gem 'sorcery'
 # Dynamically create nested objects in forms
 gem "cocoon"
 
+# create data model images
 gem "rails-erd"
+
+# allow user file uploads
+gem 'carrierwave', '~> 1.0'
 
 
 gem 'coffee-rails'

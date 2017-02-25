@@ -1,4 +1,6 @@
 class Project < ActiveRecord::Base
+  mount_uploader :photo, PhotoUploader
+
   belongs_to :user
   has_many :rewards
   has_many :pledges, through: :rewards
@@ -14,7 +16,7 @@ class Project < ActiveRecord::Base
   def start_date_in_future
     if start_date.present? && start_date < Date.today
         errors.add(:start_date, " must be later than today.")
-     end
+    end
   end
 
   def end_date_after_start_date
